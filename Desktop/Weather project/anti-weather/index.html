@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Now | Real-time Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather-Now</h1>
+        <div class="search-box">
+            <div class="input-wrapper">
+                <input type="text" id="cityInput" placeholder="Enter city name..." autocomplete="off"
+                    spellcheck="false">
+                <div id="suggestions" class="suggestions-list"></div>
+            </div>
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="weather-info" id="weatherInfo">
+            <h2 id="cityName">Enter a city to see weather</h2>
+            <div id="weatherDetails" style="display: none;">
+                <p id="temp">Temperature: --°C</p>
+                <p id="condition">Condition: --</p>
+                <p id="humidity">Humidity: --%</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
