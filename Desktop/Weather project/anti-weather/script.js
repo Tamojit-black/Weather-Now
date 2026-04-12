@@ -69,7 +69,7 @@ async function showWeather(lat, lon, name) {
 
     console.log("Temp Value:", tempValue);
 
-    // ✅ PUSH DATA
+   
     history.push({
         city: name,
         temp: tempValue
