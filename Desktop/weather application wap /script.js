@@ -11,7 +11,7 @@ let history = [];
 
 let timer;
 
-// 1. Show suggestions as you type
+
 cityInput.oninput = () => {
     clearTimeout(timer);
     timer = setTimeout(async () => {
@@ -42,7 +42,7 @@ cityInput.oninput = () => {
     }, 300);
 };
 
-// 2. Fetch and show weather
+
 async function showWeather(lat, lon, name) {
     console.log("SHOW WEATHER RUNNING");
 
@@ -64,7 +64,6 @@ async function showWeather(lat, lon, name) {
     condition.innerHTML = `Condition: ${desc}`;
     weatherDetails.style.display = "block";
 
-    // 🔥 FORCE TEST
     console.log("TEMP:", data.current.temperature_2m);
 
     history.push({
@@ -75,7 +74,7 @@ async function showWeather(lat, lon, name) {
     console.log("HISTORY:", history);
 }
 
-// 3. Search button click
+
 searchBtn.onclick = async () => {
     const query = cityInput.value;
     const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${query}&count=1`);
@@ -88,7 +87,6 @@ searchBtn.onclick = async () => {
     }
 };
 
-// 4. Hide suggestions when clicking away
 document.onclick = (e) => {
     if (e.target !== cityInput) suggestionsList.style.display = 'none';
 };
@@ -105,7 +103,7 @@ function hotCities() {
         });
     }
 
-    // 👇 YE LINE IMPORTANT HAI
+ 
     document.getElementById("result").innerHTML = html;
 }
 
