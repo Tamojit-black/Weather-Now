@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fefcfe;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgb(255, 255, 255);
+    color: #333;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #e38181;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #ee7878;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #feb47b;
+}
+
+.weather-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#weatherDetails p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.extra-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.result-box {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+}
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: white;
+    min-height: 50px;
+}
+
+body {
+    background: #bfd101;
+    color: #000;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #000000;
+    color: #f5f2f2;
+}
+
+/* Optional styling */
+.dark-mode .container {
+    background: rgba(255,255,255,0.1);
+}
+
+.dark-mode input {
+    background: #333;
+    color: white;
+}
