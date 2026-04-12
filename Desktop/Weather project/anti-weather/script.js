@@ -7,6 +7,8 @@ const temp = document.getElementById('temp');
 const condition = document.getElementById('condition');
 const humidity = document.getElementById('humidity');
 
+let history = [];
+
 let timer;
 
 // 1. Show suggestions as you type
@@ -45,11 +47,12 @@ async function showWeather(lat, lon, name) {
     const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code`);
     const data = await res.json();
 
+    console.log("Function called");
+
     cityName.innerHTML = name;
     temp.innerHTML = `Temperature: ${Math.round(data.current.temperature_2m)}°C`;
     humidity.innerHTML = `Humidity: ${data.current.relative_humidity_2m}%`;
 
-    // Simple condition matching
     const code = data.current.weather_code;
     let desc = "Clear";
     if (code > 0 && code < 4) desc = "Cloudy";
@@ -60,6 +63,19 @@ async function showWeather(lat, lon, name) {
 
     condition.innerHTML = `Condition: ${desc}`;
     weatherDetails.style.display = "block";
+
+    // 🔥 FORCE CHECK
+    const tempValue = data.current.temperature_2m;
+
+    console.log("Temp Value:", tempValue);
+
+    // ✅ PUSH DATA
+    history.push({
+        city: name,
+        temp: tempValue
+    });
+
+    console.log("Updated History:", history);
 }
 
 // 3. Search button click
@@ -79,3 +95,13 @@ searchBtn.onclick = async () => {
 document.onclick = (e) => {
     if (e.target !== cityInput) suggestionsList.style.display = 'none';
 };
+
+function sortByTemp() {
+    const sorted = [...history].sort((a, b) => a.temp - b.temp);
+    console.log("Sorted Cities:", sorted);
+}
+
+function hotCities() {
+    const hot = history.filter(item => item.temp > 30);
+    console.log("Hot Cities:", hot);
+}

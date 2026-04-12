@@ -106,3 +106,7 @@ button:hover {
     margin: 5px 0;
     font-size: 1.1rem;
 }
+
+button{
+  margin: 5px;
+}
